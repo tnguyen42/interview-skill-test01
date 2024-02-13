@@ -27,6 +27,8 @@ class UserModel {
 
       const sql = `SELECT * FROM ${this.tableName}
             WHERE ${columnSet}`;
+
+      // TODO: query throws an error "Access denied for user 'root'@'localhost' (using password: YES)"
       const result = await query(sql, [...values]);
 
       // return back the first row (user)

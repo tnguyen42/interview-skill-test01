@@ -4,7 +4,7 @@ const router = require('express').Router();
 const auth = require('../../middleware/auth.middleware');
 const Role = require('../../utils/userRoles.utils');
 const awaitHandlerFactory = require('../../middleware/awaitHandlerFactory.middleware');
-const IEOController = require("../../controllers/ieo.controller.js")
+const IEOController = require('../../controllers/ieo.controller.js');
 
 router.post('/create', auth(Role.Super), awaitHandlerFactory(IEOController.createIEO));
 router.patch('/id/:id', auth(Role.Super), awaitHandlerFactory(IEOController.updateIEO));
@@ -12,4 +12,4 @@ router.delete('/id/:id', auth(Role.Super), awaitHandlerFactory(IEOController.del
 router.get('/', awaitHandlerFactory(IEOController.getAllIEO));
 router.get('/id/:id', awaitHandlerFactory(IEOController.getOneIEO));
 
-module.exports = router
+module.exports = router;
